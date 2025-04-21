@@ -75,9 +75,34 @@
       font-size: 8px;
       color: white;
     }
+    .language-selector {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background-color: #000;
+  border: 2px solid yellow;
+  border-radius: 8px;
+  padding: 5px;
+}
+
+.language-selector select {
+  background: black;
+  color: yellow;
+  border: none;
+  font-family: 'Daydream', sans-serif;
+  font-size: 1rem;
+}
   </style>
 </head>
 <body>
+  <div class="language-selector">
+  <select onchange="changeLanguage(this.value)">
+    <option value="index.html">🇬🇧 English</option>
+    <option value="index_tr.html">🇹🇷 Türkçe</option>
+  </select>
+</div>
+
   <div class="logo">
     <img src="logo.png" alt="fallsaga Logo">
   </div>
@@ -95,5 +120,11 @@
   <footer>
     © 2025 lyzerfiction. All rights reserved.
   </footer>
+  <script>
+  function changeLanguage(langPage) {
+    window.location.href = langPage;
+  }
+</script>
+
 </body>
 </html>
